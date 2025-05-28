@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - GroupMates</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <h1 class="logo">GroupMates</h1>
+            <p class="tagline">Privacy Policy</p>
+        </header>
+        <main class="main-content" style="padding: 2rem;">
+            <h2>Privacy Policy</h2>
+            <p><strong>Last updated:</strong> January 2025</p>
+            <p><strong>Effective Date:</strong> January 2025</p>
+            
+            <h3>1. Information We Collect</h3>
+            <p>We collect the following types of information:</p>
+            <ul>
+                <li><strong>Location Information:</strong> GPS coordinates or manually entered city information</li>
+                <li><strong>Profile Information:</strong> Display name and any profile details you provide</li>
+                <li><strong>Communication Data:</strong> Messages and interactions within the platform</li>
+                <li><strong>Technical Information:</strong> IP address, device identifiers, browser information</li>
+                <li><strong>Usage Data:</strong> How you interact with our service, features used, time spent</li>
+            </ul>
+            
+            <h3>2. How We Use Your Information</h3>
+            <p>We use your information to:</p>
+            <ul>
+                <li>Provide and improve our location-based matching service</li>
+                <li>Connect you with nearby users</li>
+                <li>Monitor for safety and compliance with our Terms of Service</li>
+                <li>Prevent fraud and abuse</li>
+                <li>Analyze usage patterns to improve our service</li>
+                <li>Comply with legal obligations</li>
+            </ul>
+            
+            <h3>3. Information Sharing</h3>
+            <p>We may share your information:</p>
+            <ul>
+                <li><strong>With other users:</strong> Your display name and approximate location for matching purposes</li>
+                <li><strong>Service providers:</strong> Third-party companies that help us operate our service</li>
+                <li><strong>Legal compliance:</strong> When required by law or to protect rights and safety</li>
+                <li><strong>Business transfers:</strong> In connection with mergers, acquisitions, or asset sales</li>
+            </ul>
+            
+            <p>We may share information with trusted partners for analytics and personalized advertising, in accordance with our Privacy Policy.</p>
+            
+            <h3>4. Data Retention</h3>
+            <p>We retain your information:</p>
+            <ul>
+                <li>While your account is active</li>
+                <li>For up to 90 days after account deletion for safety and legal purposes</li>
+                <li>Longer if required by law or for legitimate business interests</li>
+            </ul>
+            
+            <h3>5. Your Rights and Choices</h3>
+            <p>You have the right to:</p>
+            <ul>
+                <li><strong>Access:</strong> Request a copy of your personal information</li>
+                <li><strong>Correct:</strong> Update or correct inaccurate information</li>
+                <li><strong>Delete:</strong> Request deletion of your personal information</li>
+                <li><strong>Opt-out:</strong> Decline certain uses of your information</li>
+                <li><strong>Portability:</strong> Receive your data in a portable format</li>
+            </ul>
+            <p>To exercise these rights, contact us at support@groupmates.app</p>
+            
+            <h3>6. Children's Privacy</h3>
+            <p>Our service is not intended for children under 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected such information, we will delete it promptly.</p>
+            
+            <h3>7. Security</h3>
+            <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+            
+            <h3>8. International Users</h3>
+            <p>If you are located outside the United States, please note that your information may be transferred to and processed in the United States where our servers are located.</p>
+            
+            <h3>9. Changes to This Policy</h3>
+            <p>We will notify you of material changes to this Privacy Policy via email or prominent notice in our app. Your continued use of the service after such notice constitutes acceptance of the changes.</p>
+            
+            <h3>10. Third-Party Marketing and Opt-Out Rights</h3>
+            <p>We may share your information with trusted marketing partners to provide you with relevant advertisements and offers. You have the right to opt out of third-party marketing activities.</p>
+            
+            <h4>Marketing Partners</h4>
+            <p>We may work with the following types of third-party marketing partners:</p>
+            <ul>
+                <li>Advertising networks and platforms</li>
+                <li>Social media platforms</li>
+                <li>Email marketing services</li>
+                <li>Analytics and attribution providers</li>
+                <li>Customer data platforms</li>
+            </ul>
+            
+            <h4>Opt-Out Options</h4>
+            <div style="background: #111; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #D4AF37;">
+                <h5 style="color: #D4AF37; margin-bottom: 1rem;">Marketing Opt-Out Center</h5>
+                <p style="margin-bottom: 1rem;">Choose what marketing communications you want to receive:</p>
+                <label style="display: block; margin-bottom: 0.5rem;">
+                    <input type="checkbox" id="email-marketing" style="margin-right: 0.5rem;">
+                    Email marketing and newsletters
+                </label>
+                <label style="display: block; margin-bottom: 0.5rem;">
+                    <input type="checkbox" id="sms-marketing" style="margin-right: 0.5rem;">
+                    SMS and text message marketing
+                </label>
+                <label style="display: block; margin-bottom: 0.5rem;">
+                    <input type="checkbox" id="push-notifications" style="margin-right: 0.5rem;">
+                    Push notifications
+                </label>
+                <label style="display: block; margin-bottom: 0.5rem;">
+                    <input type="checkbox" id="third-party-sharing" style="margin-right: 0.5rem;">
+                    Sharing data with marketing partners
+                </label>
+                <label style="display: block; margin-bottom: 1rem;">
+                    <input type="checkbox" id="behavioral-advertising" style="margin-right: 0.5rem;">
+                    Behavioral advertising and retargeting
+                </label>
+                <button onclick="saveMarketingPreferences()" class="primary-btn" style="width: auto; padding: 0.5rem 1rem;">
+                    Save Marketing Preferences
+                </button>
+                <p style="margin-top: 1rem; font-size: 0.8rem; color: #888;">
+                    You can change these preferences at any time by returning to this page or emailing us.
+                </p>
+            </div>
+            
+            <h4>External Opt-Out Resources</h4>
+            <p>You can also opt out through these industry resources:</p>
+            <ul>
+                <li><a href="http://www.networkadvertising.org/choices/" style="color: #D4AF37;">Network Advertising Initiative (NAI)</a></li>
+                <li><a href="http://www.aboutads.info/choices/" style="color: #D4AF37;">Digital Advertising Alliance (DAA)</a></li>
+                <li><a href="https://youradchoices.ca/choices/" style="color: #D4AF37;">Digital Advertising Alliance of Canada</a></li>
+                <li><a href="http://www.youronlinechoices.eu/" style="color: #D4AF37;">European Interactive Digital Advertising Alliance</a></li>
+            </ul>
+            
+            <h3>11. Contact Us</h3>
+            <p>For questions about this Privacy Policy, to exercise your rights, or to update your marketing preferences, contact us at:</p>
+            <p>Email: support@groupmates.app</p>
+            <p>Subject line for opt-out requests: "Marketing Opt-Out Request"</p>
+            
+            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #333;">
+                <p style="color: #888; font-size: 0.9rem; text-align: center;">
+                    This Privacy Policy is designed to help you understand how we collect, use, and protect your information.
+                </p>
+                <a href="index.html" class="primary-btn" style="display: inline-block; margin-top: 2rem; margin-right: 1rem;">Back to App</a>
+                <a href="cookies.html" class="secondary-btn" style="display: inline-block; margin-top: 2rem;">Cookie Policy</a>
+            </div>
+            
+            <script>
+                function saveMarketingPreferences() {
+                    const emailMarketing = document.getElementById('email-marketing').checked;
+                    const smsMarketing = document.getElementById('sms-marketing').checked;
+                    const pushNotifications = document.getElementById('push-notifications').checked;
+                    const thirdPartySharing = document.getElementById('third-party-sharing').checked;
+                    const behavioralAds = document.getElementById('behavioral-advertising').checked;
+                    
+                    localStorage.setItem('marketingPreferences', JSON.stringify({
+                        emailMarketing: emailMarketing,
+                        smsMarketing: smsMarketing,
+                        pushNotifications: pushNotifications,
+                        thirdPartySharing: thirdPartySharing,
+                        behavioralAds: behavioralAds,
+                        timestamp: Date.now()
+                    }));
+                    
+                    alert('Marketing preferences saved! We will honor your choices for all future communications.');
+                }
+                
+                // Load saved preferences
+                window.addEventListener('load', function() {
+                    const saved = localStorage.getItem('marketingPreferences');
+                    if (saved) {
+                        const prefs = JSON.parse(saved);
+                        document.getElementById('email-marketing').checked = prefs.emailMarketing;
+                        document.getElementById('sms-marketing').checked = prefs.smsMarketing;
+                        document.getElementById('push-notifications').checked = prefs.pushNotifications;
+                        document.getElementById('third-party-sharing').checked = prefs.thirdPartySharing;
+                        document.getElementById('behavioral-advertising').checked = prefs.behavioralAds;
+                    }
+                });
+            </script>
+        </main>
+    </div>
+</body>
+</html>
