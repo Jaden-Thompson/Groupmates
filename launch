@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch Dashboard - GroupMates</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <h1 class="logo">GroupMates</h1>
+            <p class="tagline">Launch Dashboard</p>
+        </header>
+        <main class="main-content" style="padding: 2rem;">
+            
+            <!-- Launch Checklist -->
+            <div class="analytics-section">
+                <h2>🚀 Launch Checklist</h2>
+                <div class="checklist">
+                    <label class="checklist-item">
+                        <input type="checkbox" checked disabled> ✅ Terms of Service
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" checked disabled> ✅ Privacy Policy
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" checked disabled> ✅ Cookie Policy
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" checked disabled> ✅ User Profiles
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" checked disabled> ✅ Photo Verification
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" checked disabled> ✅ Chat System
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" checked disabled> ✅ Error Handling
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" checked disabled> ✅ Analytics Tracking
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" id="production-db"> 🔄 Production Database
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" id="domain-name"> 🔄 Custom Domain
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" id="ssl-cert"> 🔄 SSL Certificate
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" id="monitoring"> 🔄 Error Monitoring
+                    </label>
+                </div>
+            </div>
+
+            <!-- Analytics Dashboard -->
+            <div class="analytics-section">
+                <h2>📊 Analytics Overview</h2>
+                <div id="analytics-stats">
+                    <!-- Stats will be populated here -->
+                </div>
+                <button onclick="exportAnalytics()" class="secondary-btn">Export Analytics Data</button>
+                <button onclick="clearAnalytics()" class="secondary-btn">Clear Analytics</button>
+            </div>
+
+            <!-- User Activity -->
+            <div class="analytics-section">
+                <h2>👥 User Activity</h2>
+                <div id="user-activity">
+                    <!-- Activity will be populated here -->
+                </div>
+            </div>
+
+            <!-- Error Log -->
+            <div class="analytics-section">
+                <h2>🐛 Error Log</h2>
+                <div id="error-log">
+                    <!-- Errors will be populated here -->
+                </div>
+            </div>
+
+            <!-- Database Setup Guide -->
+            <div class="analytics-section">
+                <h2>🗄️ Database Setup (Optional for MVP)</h2>
+                <p><strong>Current Status:</strong> Using localStorage (good for testing)</p>
+                <p><strong>For Production:</strong> Consider adding PostgreSQL for:</p>
+                <ul>
+                    <li>✅ Persistent user data</li>
+                    <li>✅ Real user matching</li>
+                    <li>✅ Message history</li>
+                    <li>✅ Analytics data</li>
+                    <li>✅ User verification records</li>
+                </ul>
+                <div style="background: #111; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                    <h4>Quick Database Setup:</h4>
+                    <ol>
+                        <li>Click "Database" in Replit sidebar</li>
+                        <li>Choose PostgreSQL</li>
+                        <li>Update app to use DATABASE_URL</li>
+                        <li>Migrate localStorage data</li>
+                    </ol>
+                </div>
+                <button onclick="showDatabaseMigration()" class="primary-btn">Show Migration Code</button>
+            </div>
+
+            <!-- Launch Actions -->
+            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #333;">
+                <a href="index.html" class="primary-btn" style="display: inline-block; margin-right: 1rem;">Back to App</a>
+                <button onclick="deployApp()" class="primary-btn" style="margin-right: 1rem;">Deploy to Production</button>
+                <button onclick="generateLaunchReport()" class="secondary-btn">Generate Launch Report</button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Load analytics data
+        function loadAnalytics() {
+            const analytics = JSON.parse(localStorage.getItem('analytics') || '{}');
+            const events = analytics.events || [];
+            
+            // Calculate stats
+            const totalEvents = events.length;
+            const uniqueSessions = new Set(events.map(e => e.sessionId)).size;
+            const errors = events.filter(e => e.event === 'error').length;
+            const userActions = events.filter(e => e.event === 'user_action').length;
+            
+            // Display stats
+            document.getElementById('analytics-stats').innerHTML = `
+                <div class="analytics-stat">
+                    <span>Total Events:</span>
+                    <span class="stat-value">${totalEvents}</span>
+                </div>
+                <div class="analytics-stat">
+                    <span>Unique Sessions:</span>
+                    <span class="stat-value">${uniqueSessions}</span>
+                </div>
+                <div class="analytics-stat">
+                    <span>User Actions:</span>
+                    <span class="stat-value">${userActions}</span>
+                </div>
+                <div class="analytics-stat">
+                    <span>Errors:</span>
+                    <span class="stat-value">${errors}</span>
+                </div>
+            `;
+            
+            // Display recent activity
+            const recentEvents = events.slice(-10).reverse();
+            document.getElementById('user-activity').innerHTML = recentEvents.map(event => `
+                <div style="padding: 0.5rem; border-bottom: 1px solid #222;">
+                    <strong>${event.event}</strong> - ${new Date(event.timestamp).toLocaleString()}
+                    ${event.data ? `<br><small>${JSON.stringify(event.data)}</small>` : ''}
+                </div>
+            `).join('') || '<p>No activity recorded yet</p>';
+            
+            // Display errors
+            const errorEvents = events.filter(e => e.event === 'error');
+            document.getElementById('error-log').innerHTML = errorEvents.map(error => `
+                <div style="padding: 0.5rem; border-bottom: 1px solid #222; color: #ff4444;">
+                    <strong>${error.data?.context || 'Unknown'}</strong> - ${new Date(error.timestamp).toLocaleString()}
+                    <br><small>${error.data?.error || 'No details'}</small>
+                </div>
+            `).join('') || '<p>No errors recorded</p>';
+        }
+        
+        function exportAnalytics() {
+            const analytics = localStorage.getItem('analytics') || '{}';
+            const blob = new Blob([analytics], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `groupmates-analytics-${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+        
+        function clearAnalytics() {
+            if (confirm('Are you sure you want to clear all analytics data?')) {
+                localStorage.removeItem('analytics');
+                loadAnalytics();
+                alert('Analytics data cleared');
+            }
+        }
+        
+        function showDatabaseMigration() {
+            alert(`Database Migration Code:
+
+// 1. Install PostgreSQL client
+npm install pg
+
+// 2. Create migration script
+const { Client } = require('pg');
+
+async function migrateData() {
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL
+  });
+  
+  await client.connect();
+  
+  // Create tables
+  await client.query(\`
+    CREATE TABLE IF NOT EXISTS users (
+      id VARCHAR PRIMARY KEY,
+      name VARCHAR NOT NULL,
+      profile_data JSONB,
+      created_at TIMESTAMP DEFAULT NOW()
+    );
+    
+    CREATE TABLE IF NOT EXISTS analytics (
+      id SERIAL PRIMARY KEY,
+      event VARCHAR NOT NULL,
+      data JSONB,
+      timestamp TIMESTAMP DEFAULT NOW()
+    );
+  \`);
+  
+  await client.end();
+}
+
+migrateData();`);
+        }
+        
+        function deployApp() {
+            alert('Ready to deploy! Use Replit\'s Deploy button to publish your app to the web.');
+        }
+        
+        function generateLaunchReport() {
+            const analytics = JSON.parse(localStorage.getItem('analytics') || '{}');
+            const report = {
+                timestamp: new Date().toISOString(),
+                analytics: analytics,
+                checklist: {
+                    legal_docs: true,
+                    user_features: true,
+                    error_handling: true,
+                    analytics: true,
+                    database: document.getElementById('production-db').checked,
+                    domain: document.getElementById('domain-name').checked,
+                    ssl: document.getElementById('ssl-cert').checked,
+                    monitoring: document.getElementById('monitoring').checked
+                }
+            };
+            
+            const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `groupmates-launch-report-${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+        
+        // Load data when page loads
+        window.addEventListener('load', loadAnalytics);
+    </script>
+</body>
+</html>
