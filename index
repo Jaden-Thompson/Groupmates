@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GroupMates - Connect & Get Moving</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="header">
+            <h1 class="logo">GroupMates</h1>
+            <p class="tagline">Connect. Move. Achieve.</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Welcome Screen -->
+            <div id="welcome-screen" class="screen active">
+                <div class="welcome-content">
+                    <h2>Find others who actually do the work</h2>
+                    <p>Simple. Purpose-driven. Location-based.</p>
+                    
+                    <div id="login-form" class="auth-form">
+                        <h3>Sign In / Sign Up</h3>
+                        <input type="tel" id="phone-number" placeholder="Enter your phone number" class="phone-input">
+                        <input type="text" id="display-name" placeholder="Enter your display name" class="name-input">
+
+                        <!-- Simple Math CAPTCHA -->
+                        <div class="captcha-section">
+                            <label for="captcha-input">Verify you're human: <span id="captcha-question"></span></label>
+                            <input type="number" id="captcha-input" placeholder="Enter answer" class="captcha-input">
+                        </div>
+
+                        <button id="send-verification-btn" class="primary-btn">Send Verification Code</button>
+                    </div>
+
+                    <div id="verification-form" class="auth-form hidden">
+                        <h3>Enter Verification Code</h3>
+                        <p>We sent a code to <span id="phone-display"></span></p>
+                        <input type="text" id="verification-code" placeholder="Enter 6-digit code" class="verification-input" maxlength="6">
+                        <button id="verify-code-btn" class="primary-btn">Verify & Continue</button>
+                        <button id="resend-code-btn" class="secondary-btn">Resend Code</button>
+                        <button id="back-to-phone-btn" class="secondary-btn">Change Phone Number</button>
+                    </div>
+
+                    <p style="margin-top: 1rem; font-size: 0.8rem; color: #888; text-align: center;">
+                        By continuing, you agree to our <a href="terms.html" style="color: #D4AF37;">Terms of Service</a>, <a href="privacy.html" style="color: #D4AF37;">Privacy Policy</a>, and <a href="cookies.html" style="color: #D4AF37;">Cookie Policy</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Location Permission Screen -->
+            <div id="location-screen" class="screen">
+                <div class="location-content">
+                    <div class="location-icon">📍</div>
+                    <h2>Share Your Location</h2>
+                    <p>Find people near you who are ready to take action</p>
+                    <button id="enable-location-btn" class="primary-btn">Enable Location</button>
+                    <button id="manual-location-btn" class="secondary-btn">Enter City Manually</button>
+                    <input type="text" id="manual-city" placeholder="Enter your city" class="city-input hidden">
+                </div>
+            </div>
+
+            <!-- Main App Screen -->
+            <div id="main-screen" class="screen">
+                <div class="user-info">
+                    <div class="user-info-left">
+                        <span id="user-display-name"></span>
+                        <span id="user-location"></span>
+                    </div>
+                    <button id="profile-btn" class="profile-btn" onclick="window.location.href='profile.html'">👤</button>
+                </div>
+
+                <div class="requests-section" id="requests-section" style="display: none;">
+                    <h3>Connection Requests</h3>
+                    <div id="connection-requests" class="requests-list">
+                        <!-- Requests will be populated here -->
+                    </div>
+                </div>
+
+                <div class="nearby-section">
+                    <h3>Nearby GroupMates</h3>
+                    <div id="nearby-users" class="users-list">
+                        <!-- Users will be populated here -->
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button id="refresh-btn" class="secondary-btn">Refresh</button>
+                </div>
+            </div>
+
+            <!-- Loading Screen -->
+            <div id="loading-screen" class="screen">
+                <div class="loading-content">
+                    <div class="spinner"></div>
+                    <p>Finding your GroupMates...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="database.js"></script>
+    <script src="script.js"></script>
+    
+    <!-- Analytics Initialization -->
+    <script>
+        // Initialize analytics when page loads
+        window.addEventListener('load', function() {
+            if (window.app) {
+                app.trackPageView('welcome_screen');
+                app.trackEvent('app_start', {
+                    userAgent: navigator.userAgent,
+                    screenSize: `${screen.width}x${screen.height}`,
+                    timestamp: Date.now()
+                });
+            }
+        });
+        
+        // Track page visibility changes
+        document.addEventListener('visibilitychange', function() {
+            if (window.app) {
+                app.trackEvent('visibility_change', {
+                    hidden: document.hidden,
+                    timestamp: Date.now()
+                });
+            }
+        });
+        
+        // Track errors globally
+        window.addEventListener('error', function(e) {
+            if (window.app) {
+                app.handleError(e.error, 'javascript');
+            }
+        });
+    </script>
+</body>
+
+</html>
