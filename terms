@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - GroupMates</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <h1 class="logo">GroupMates</h1>
+            <p class="tagline">Terms of Service</p>
+        </header>
+        <main class="main-content" style="padding: 2rem;">
+            <h2>Terms of Service</h2>
+            <p><strong>Last updated:</strong> January 2025</p>
+            <p><strong>Effective Date:</strong> January 2025</p>
+            
+            <h3>1. Acceptance of Terms</h3>
+            <p>By accessing or using GroupMates ("the Service"), you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you may not access the Service. You must be at least 13 years old to use this service.</p>
+            
+            <h3>2. Data Collection and Use</h3>
+            <p><strong>We collect and use your data as outlined in our Privacy Policy.</strong> By using our Service, you consent to our collection and use of your personal information, including but not limited to:</p>
+            <ul>
+                <li>Location data (GPS coordinates, city information)</li>
+                <li>Display names and profile information</li>
+                <li>Messages and communications sent through the platform</li>
+                <li>Device information and IP addresses</li>
+                <li>Usage patterns and behavioral data</li>
+                <li>Any other information you provide or generate while using the Service</li>
+            </ul>
+            <p>We may use and share your data in accordance with our Privacy Policy. You have the right to request deletion of your personal data, correct inaccurate information, and opt out of certain data uses as described in our Privacy Policy.</p>
+            
+            <h3>3. Content Monitoring and Safety</h3>
+            <p><strong>We monitor content for safety, security, and compliance.</strong> By using the Service, you consent to our monitoring of messages, communications, and content shared through our platform. This monitoring is conducted for:</p>
+            <ul>
+                <li>Enforcement of these Terms of Service</li>
+                <li>Detection of prohibited activities</li>
+                <li>Safety and security purposes</li>
+                <li>Compliance with legal requirements</li>
+            </ul>
+            <p>We implement appropriate safeguards to protect your privacy during monitoring activities.</p>
+            
+            <h3>4. Prohibited Activities</h3>
+            <p>The following activities are strictly prohibited and may result in account termination and service restrictions:</p>
+            <ul>
+                <li><strong>Sexual content:</strong> Any form of sexual solicitation or sharing of inappropriate sexual content</li>
+                <li><strong>Unauthorized commercial activities:</strong> Attempting to sell products or services without permission</li>
+                <li><strong>Harassment or abuse:</strong> Bullying, threatening, or harassing other users</li>
+                <li><strong>Illegal activities:</strong> Any content or behavior that violates applicable laws</li>
+                <li><strong>Spam or malicious content:</strong> Sending unsolicited messages or harmful content</li>
+                <li><strong>Impersonation:</strong> Pretending to be someone else or providing false information</li>
+                <li><strong>Platform abuse:</strong> Attempting to circumvent security measures or disrupt the service</li>
+            </ul>
+            
+            <h3>5. Enforcement and Penalties</h3>
+            <p><strong>We reserve the right to take enforcement action after investigation.</strong> Depending on the severity of violations, we may:</p>
+            <ul>
+                <li>Issue warnings or temporary suspensions</li>
+                <li>Terminate your account</li>
+                <li>Restrict access from your IP address or device</li>
+                <li>Prevent creation of new accounts</li>
+                <li>Cooperate with law enforcement as required by law</li>
+            </ul>
+            <p>We provide a process for users to appeal enforcement actions. Serious violations may result in immediate permanent bans.</p>
+            
+            <h3>6. User Rights and Data Protection</h3>
+            <p>You have the following rights regarding your data:</p>
+            <ul>
+                <li>Request access to your personal data</li>
+                <li>Request correction of inaccurate data</li>
+                <li>Request deletion of your data</li>
+                <li>Opt out of certain data uses</li>
+                <li>Appeal enforcement decisions</li>
+            </ul>
+            <p>Contact us at the email below to exercise these rights.</p>
+            
+            <h3>7. No Warranty</h3>
+            <p>The Service is provided "as is" without any warranties, to the fullest extent permitted by law. We do not guarantee the accuracy, reliability, or availability of the Service.</p>
+            
+            <h3>8. Limitation of Liability</h3>
+            <p>To the fullest extent permitted by law, GroupMates shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of the Service, including but not limited to damages resulting from user misconduct, technical issues, or unauthorized access.</p>
+            
+            <h3>9. Changes to Terms</h3>
+            <p>We will notify users of material changes to these terms via email or in-app notice. Continued use of the Service after changes become effective constitutes acceptance of the modified terms.</p>
+            
+            <h3>10. Governing Law</h3>
+            <p>These terms are governed by the laws of the United States. Any disputes will be resolved in the courts of competent jurisdiction in the United States.</p>
+            
+            <h3>11. Contact Information</h3>
+            <p>For questions about these Terms of Service, data requests, or appeals, contact us at: support@groupmates.app</p>
+            
+            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #333;">
+                <p style="color: #888; font-size: 0.9rem; text-align: center;">
+                    By using GroupMates, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
+                </p>
+                <a href="index.html" class="primary-btn" style="display: inline-block; margin-top: 2rem;">Back to App</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
