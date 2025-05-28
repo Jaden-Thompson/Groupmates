@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - GroupMates</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <h1 class="logo">GroupMates</h1>
+            <p class="tagline">Your Profile</p>
+        </header>
+        <main class="main-content" style="padding: 2rem;">
+            <div class="profile-container">
+                <h2>Complete Your Profile</h2>
+                
+                <!-- Profile Photo Section -->
+                <div class="photo-section">
+                    <div class="photo-preview-container">
+                        <div id="photo-preview" class="photo-preview">
+                            <div class="photo-placeholder">📸</div>
+                            <img id="profile-image" class="profile-image hidden" alt="Profile photo">
+                        </div>
+                    </div>
+                    
+                    <div class="photo-controls">
+                        <input type="file" id="photo-upload" accept="image/*" class="file-input">
+                        <label for="photo-upload" class="secondary-btn">Choose Photo</label>
+                        <button id="camera-btn" class="secondary-btn">Take Selfie</button>
+                    </div>
+                </div>
+
+                <!-- Camera Section -->
+                <div id="camera-section" class="camera-section hidden">
+                    <video id="camera-video" class="camera-video" autoplay></video>
+                    <canvas id="camera-canvas" class="hidden"></canvas>
+                    <div class="camera-controls">
+                        <button id="capture-btn" class="primary-btn">Capture Photo</button>
+                        <button id="cancel-camera-btn" class="secondary-btn">Cancel</button>
+                    </div>
+                </div>
+
+                <!-- Verification Section -->
+                <div id="verification-section" class="verification-section hidden">
+                    <h3>Selfie Verification</h3>
+                    <p>Please take a quick selfie to verify your identity. This helps keep GroupMates safe for everyone.</p>
+                    
+                    <div class="verification-controls">
+                        <button id="start-verification-btn" class="primary-btn">Start Verification</button>
+                    </div>
+                    
+                    <div id="verification-camera" class="verification-camera hidden">
+                        <video id="verification-video" class="camera-video" autoplay></video>
+                        <div class="verification-instructions">
+                            <p>Look directly at the camera and capture a clear photo of your face</p>
+                        </div>
+                        <div class="camera-controls">
+                            <button id="verify-capture-btn" class="primary-btn">Capture Verification</button>
+                            <button id="cancel-verification-btn" class="secondary-btn">Cancel</button>
+                        </div>
+                    </div>
+                    
+                    <div id="verification-result" class="verification-result hidden">
+                        <div class="verification-status">
+                            <span id="verification-status-text"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Info Section -->
+                <div class="profile-info-section">
+                    <h3>Profile Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="bio">Bio (optional)</label>
+                        <textarea id="bio" placeholder="Tell others about yourself and what activities you enjoy..." rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interests">Interests</label>
+                        <div class="interests-container">
+                            <label class="interest-tag">
+                                <input type="checkbox" value="fitness"> Fitness
+                            </label>
+                            <label class="interest-tag">
+                                <input type="checkbox" value="running"> Running
+                            </label>
+                            <label class="interest-tag">
+                                <input type="checkbox" value="hiking"> Hiking
+                            </label>
+                            <label class="interest-tag">
+                                <input type="checkbox" value="cycling"> Cycling
+                            </label>
+                            <label class="interest-tag">
+                                <input type="checkbox" value="yoga"> Yoga
+                            </label>
+                            <label class="interest-tag">
+                                <input type="checkbox" value="sports"> Sports
+                            </label>
+                            <label class="interest-tag">
+                                <input type="checkbox" value="dancing"> Dancing
+                            </label>
+                            <label class="interest-tag">
+                                <input type="checkbox" value="swimming"> Swimming
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="profile-actions">
+                    <button id="save-profile-btn" class="primary-btn">Save Profile</button>
+                    <button id="skip-profile-btn" class="secondary-btn">Skip for Now</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="profile.js"></script>
+</body>
+</html>
